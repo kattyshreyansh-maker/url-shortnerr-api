@@ -1,3 +1,12 @@
+const fs = require('fs');
+console.log("==== X-RAY DIAGNOSTICS ====");
+console.log("Root folder sees:", fs.readdirSync(__dirname));
+try {
+    console.log("Models folder sees:", fs.readdirSync(__dirname + '/models'));
+} catch (err) {
+    console.log("WARNING: Cannot find a folder named 'models'!");
+}
+console.log("===========================");
 require('dotenv').config(); 
 
 const express = require('express');
